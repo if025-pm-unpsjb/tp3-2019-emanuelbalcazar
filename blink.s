@@ -53,7 +53,7 @@ _start:
    ldrb r1, [r0]           // load in r1 the value store in the memory address
                            // [r0], with immediate offset (unsigned byte).
 
-   mov  r2, #0x20          // store ‭the value 0000100‬ in r2, this value is used
+   mov  r2, #0x90          // store ‭the value 0000100‬ in r2, this value is used
                            // to change the direction mode of the GPIOs pins
                            // into which the mbed LPC1768 LED1 is connected.
 
