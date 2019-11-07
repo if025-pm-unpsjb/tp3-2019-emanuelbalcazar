@@ -36,7 +36,7 @@ hang:
 /* Perform a busy waiting. */
 .thumb_func
 dowait:
-   ldr  r7, =0xA000       // store 0xA0000 in the r7 register
+   ldr  r7, =0xA0000       // store 0xA0000 in the r7 register
 dowaitloop:
    sub  r7, #1             // substract 1 from the value in r7
    bne  dowaitloop         // if r7 != 0, goto dowaitloop
@@ -53,7 +53,7 @@ _start:
    ldrb r1, [r0]           // load in r1 the value store in the memory address
                            // [r0], with immediate offset (unsigned byte).
 
-   mov  r2, #0x04          // store ‭the value 0000100‬ in r2, this value is used
+   mov  r2, #0x20          // store ‭the value 0000100‬ in r2, this value is used
                            // to change the direction mode of the GPIOs pins
                            // into which the mbed LPC1768 LED1 is connected.
 
@@ -65,7 +65,7 @@ _start:
 
    ldr  r1, =0x2009C03E    // clear gpio (FIO1CLR2, see page 136 in LPC17xx manual)
 
-   mov  r2, #0x04          // store the value 0100 in r2
+   //mov  r2, #0x04          // store the value 0100 in r2
 
 mainloop:
    strb r2, [r0]           // store the value in r2 in the memory address [r0]
